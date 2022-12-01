@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5769081361689818178}
   - component: {fileID: 5548832315747256899}
   - component: {fileID: -1091432549210854647}
+  - component: {fileID: 1515859580941895013}
   m_Layer: 0
   m_Name: 1Up
   m_TagString: CollectibleBig
@@ -155,3 +156,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1515859580941895013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4001506312725134938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91983b6e4f0527c428103433073b56dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

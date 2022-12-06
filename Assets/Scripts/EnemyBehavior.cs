@@ -33,7 +33,7 @@ public class EnemyBehavior : CharacterController2D
         return transform.localScale.x > 0.001f;
     }
 
-    private void OnTriggerExit2D(Collider2D collision) //turning
+    private void OnTriggerExit2D(Collider2D boxCollider) //turning
     {
         transform.localScale = new Vector2(-(Mathf.Sign(rigidBody.velocity.x)), transform.localScale.y);
     }

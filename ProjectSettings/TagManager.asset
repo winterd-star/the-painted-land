@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CollectibleSmall
   - CollectibleBig
+  - Floor
+  - Enemy
+  - Goal
+  - EnemyDeath
   layers:
   - Default
   - TransparentFX

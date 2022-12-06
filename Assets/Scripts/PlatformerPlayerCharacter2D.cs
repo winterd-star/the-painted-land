@@ -7,10 +7,10 @@ public class PlatformerPlayerCharacter2D : CharacterController2D
     public float speed = 3.0f;
     public float collisionTestOffset;
     public SpriteRenderer spriteRenderer;
-    private int _coin;
-    private int _life;
+    private static int _coin = 0;
+    private static int _life = 2;
     private Rigidbody2D rigidbody2D;
-    //private bool canJumpAgain;
+    private int canJumpAgain = 0;
     private float jumpInputLastFrame = 0.0f;
     private static PlatformerPlayerCharacter2D _state;
     public static PlatformerPlayerCharacter2D State
@@ -34,8 +34,6 @@ public class PlatformerPlayerCharacter2D : CharacterController2D
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        _coin = 0;
-        _life = 2;
     }
 
     // Update is called once per frame
@@ -51,18 +49,15 @@ public class PlatformerPlayerCharacter2D : CharacterController2D
         if (xInput != 0.0f)
             motion.x = xInput*speed;
 
-        /*while (IsTouchingGround())
+        if (IsTouchingGround())
         {
-            canJumpAgain = true;
-        }*/
+            canJumpAgain = 0;
+        }
         
-        if (Input.GetAxis("Jump") > 0.0f && isTouchingGround){
+        if (Input.GetKeyDown(KeyCode.Space) && canJumpAgain < 2)
+        {
                 motion.y = speed + 1.5f;
-            /* if(Input.GetAxis("Jump") > 0.0f && canJumpAgain == true)
-            {
-                motion.y = speed + 1.5f;
-                canJumpAgain = false;
-            } */
+                canJumpAgain++;
         }
 
         rigidbody2D.velocity = motion;
@@ -72,6 +67,11 @@ public class PlatformerPlayerCharacter2D : CharacterController2D
     public void CoinCounter()
     {
         _coin++;
+        if(_coin == 100)
+        {
+            _coin = 0;
+            _life++;
+        }
     }
 
     public void LifeCounter()

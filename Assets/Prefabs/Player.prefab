@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7172690022507142477}
   m_Layer: 0
   m_Name: BoxCastPosition
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,10 @@ MonoBehaviour:
   debugTarget: {fileID: 0}
   debugDirection: {fileID: 0}
   rayDebug: {fileID: 0}
-  groundCheckSize: {x: 0.75, y: 0.2, z: 1}
-  jumpableTags: []
+  groundCheckSize: {x: 0.5, y: 0.2, z: 1}
+  jumpableTags:
+  - Floor
+  - EnemyDeath
   contactFilter2D:
     useTriggers: 0
     useLayerMask: 0
@@ -238,7 +240,7 @@ GameObject:
   - component: {fileID: 3069642791454780231}
   m_Layer: 0
   m_Name: GroundBoxCast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
